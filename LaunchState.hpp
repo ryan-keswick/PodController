@@ -4,6 +4,7 @@
 
 class LaunchState: public State {
     public:
+        LaunchState();
         char name[8] = "Launch";
     private:
 };

@@ -15,6 +15,7 @@ PodController::PodController() {
     state = safe;  
     createTimer();
     printf("new pod\n");
+    waitKeyForPress();
 }
 
 void PodController::createTimer() {
@@ -28,4 +29,26 @@ void PodController::createTimer() {
     } else {
         printf("FORK FAILED, most likely ran out of memory\n");
     }
+}
+
+
+void PodController::waitKeyForPress() {
+    int number = 0;
+    scanf("%d", &number);
+    handleKeyPress(number);
+    waitKeyForPress();
+}
+
+void PodController::handleKeyPress(int number) {
+    if (number < 0 || 100 < number) printError();
+    // If the keyPressed() fails then it prints an error message
+    if(state->keyPressed(number)) {
+        state = state->next();
+    } else {
+        printError();
+    }
+}
+
+void PodController::printError() {
+    printf("Error");
 }

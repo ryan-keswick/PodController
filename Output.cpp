@@ -5,13 +5,14 @@ Output::Output(PodController* Pod) {
     printf("Observer  created\n");
     time(&this->startOfProgram);
     time(&this->timeOfLastStateSwitch);
-    time(&this->currentTime);
     this->pod = Pod;
 
     int i = 0;
-    while(i<1) { // An infinite Loop to show the time
+    while(i<10) { // An infinite Loop to show the time
+        time(&this->currentTime);
         displayInfo();
         sleep(1); 
+        i++;
     }
 
 }

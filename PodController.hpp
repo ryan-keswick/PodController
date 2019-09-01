@@ -10,8 +10,11 @@ class PodController {
     public:
         PodController();
         State *state;
+        void waitKeyForPress();
     private:
         void createTimer();
+        void handleKeyPress(int number);
+        void printError();
 };
 
 #endif

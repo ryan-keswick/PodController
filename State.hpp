@@ -20,6 +20,8 @@
 class State {
     public:
         char name[10] = "Safe";
+        virtual bool keyPressed(int number);
+        virtual State *next();
     private:
 };
 
