@@ -7,6 +7,10 @@
 #include <unistd.h>
 #include <iostream>
 #include <string.h>
+#include <sys/mman.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <boost/interprocess/shared_memory_object.hpp>
 #include "time.h"
 
 class PodController {

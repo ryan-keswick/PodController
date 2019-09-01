@@ -72,7 +72,4 @@ std::string PodController::displayInfo() {
     std::string timeInCurrState(std::to_string(difftime(this->currentTime, this->timeOfLastStateSwitch)));
 
     return currState + " " + timeSinceStart + " " + timeInCurrState + "\n";
-    //printf("%s ", state->name().c_str());
-    //printf("%.f ", difftime(this->currentTime, this->startOfProgram));
-    //printf("%.f\n", difftime(this->currentTime, this->timeOfLastStateSwitch));
 }
