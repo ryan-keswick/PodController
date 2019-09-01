@@ -4,7 +4,7 @@
 
 class BrakeState: public State {
     public:
-
+        char name[6] = "Brake";
     private:
 };
 

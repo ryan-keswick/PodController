@@ -10,15 +10,18 @@
 #ifndef OBSERVER_H 
 #define OBSERVER_H 
 #include "State.hpp"
+#include "PodController.hpp"
+#include "time.h"
 
-class Timer: {
-    PodController pod;
+class Observer {
     public:
-        Timer(PodController PodToBeObserved) {
-            pod = PodToBeObserved;
-        }
+        Observer(PodController* );
+        void displayInfo();
     private:
+        PodController pod;
+        time_t startOfProgram;
+        time_t currentTime;
+        time_t timeOfLastStateSwitch;
 };
-
 
 #endif

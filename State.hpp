@@ -10,7 +10,8 @@
 #ifndef STATE_H 
 #define STATE_H 
 #include <iostream>
-using namespace std;
+
+
 /** Parent Class for all the states,
  *  This is a very good thing to add incase if you
  *  wanted to add any behaviour to all the states easily
@@ -18,13 +19,7 @@ using namespace std;
 **/  
 class State {
     public:
-        void helloworld(int r) {
-           for (int i=0; i < r; i++) {
-               printf("Hello World!\n");
-           }
-           printf("\n");
-        }
-
+        char name[10] = "Safe";
     private:
 };
 

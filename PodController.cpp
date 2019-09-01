@@ -7,45 +7,24 @@
  * 
  * 
  */
-#include "SafeState.hpp"
-#include "LaunchState.hpp"
-#include "BrakeState.hpp"
-#include "Observer.hpp"
-#include <stdio.h>
-#include <unistd.h>
+#include "PodController.hpp"
+   
+PodController::PodController() {
+    SafeState *safe = new SafeState();
+    state = safe;  
+    createTimer();
+    printf("new pod\n");
+}
 
-
-class PodController {
-    State state;
-    Observer observer;
-
-    public:
-        PodController() {
-            SafeState safe;
-            state = new SafeState();
-            createTimer();
-        }
-    private:
-        /**
-         * Creates a timer object that can observe the pod whenever
-         * The child operates the timer object indefinately
-         */
-        void createTimer() {
-            pid_t  pid = fork();
-            if (pid == 0) {
-                // Child Process operates the Timer that prints the state
-                // every 1 second and the info
-                time = new Timer(this); 
-            } else if (pid  > 0) {
-                // Parent Process Just Continues
-            } else {
-                printf("FORK FAILED, most likely ran out of memory\n");
-            }
-        }
-
-};
-
-int main(void) {
-
-    return 0;
+void PodController::createTimer() {
+    pid_t  pid = fork();
+    if (pid == 0) {
+        // Child Process operates the Timer that prints the state
+        // every 1 second and the info
+        Observer *observer = new Observer(this); 
+    } else if (pid  > 0) {
+        // Parent Process Just Continues
+    } else {
+        printf("FORK FAILED, most likely ran out of memory\n");
+    }
 }

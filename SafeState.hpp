@@ -13,7 +13,8 @@
 
 class SafeState: public State {
     public:
-
+        SafeState();
+        char name[5] = "Safe";
     private:
 };
 
