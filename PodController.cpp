@@ -8,6 +8,7 @@
  * 
  */
 #include "PodController.hpp"
+#include "Output.hpp"
    
 PodController::PodController() {
     SafeState *safe = new SafeState();

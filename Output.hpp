@@ -10,8 +10,8 @@
 #ifndef OBSERVER_H 
 #define OBSERVER_H 
 #include "State.hpp"
-#include "PodController.hpp"
 #include "time.h"
+#include "PodController.hpp"
 
 class Output {
     public:
