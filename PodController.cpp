@@ -60,14 +60,19 @@ void PodController::Output() {
     int i = 0;
     while(i<10) { // An infinite Loop to show the time
         time(&this->currentTime);
-        displayInfo();
+        std::cout << displayInfo();
         sleep(1); 
         i++;
     }
 }
 
-void PodController::displayInfo() {
-    printf("%s ", state->name().c_str());
-    printf("%.f ", difftime(this->currentTime, this->startOfProgram));
-    printf("%.f\n", difftime(this->currentTime, this->timeOfLastStateSwitch));
+std::string PodController::displayInfo() {
+    std::string currState (state->name().c_str());
+    std::string timeSinceStart (std::to_string(difftime(this->currentTime, this->startOfProgram)));
+    std::string timeInCurrState(std::to_string(difftime(this->currentTime, this->timeOfLastStateSwitch)));
+
+    return currState + " " + timeSinceStart + " " + timeInCurrState + "\n";
+    //printf("%s ", state->name().c_str());
+    //printf("%.f ", difftime(this->currentTime, this->startOfProgram));
+    //printf("%.f\n", difftime(this->currentTime, this->timeOfLastStateSwitch));
 }

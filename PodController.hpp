@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <iostream>
+#include <string.h>
 #include "time.h"
 
 class PodController {
@@ -17,7 +18,8 @@ class PodController {
         void Output();
         void createTimer();
         void handleKeyPress(int number);
-        void displayInfo();      
+        std::string displayInfo();      
+        void writePipe();
         void printError();
         time_t startOfProgram;
         time_t currentTime;
