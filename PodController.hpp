@@ -3,7 +3,7 @@
 #include "SafeState.hpp"
 #include "LaunchState.hpp"
 #include "BrakeState.hpp"
-#include "Observer.hpp"
+#include "Output.hpp"
 #include <stdio.h>
 #include <unistd.h>
 

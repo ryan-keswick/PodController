@@ -13,12 +13,12 @@
 #include "PodController.hpp"
 #include "time.h"
 
-class Observer {
+class Output {
     public:
-        Observer(PodController* );
+        Output(PodController *Pod);
         void displayInfo();
     private:
-        PodController pod;
+        PodController *pod;
         time_t startOfProgram;
         time_t currentTime;
         time_t timeOfLastStateSwitch;

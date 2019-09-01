@@ -21,7 +21,7 @@ void PodController::createTimer() {
     if (pid == 0) {
         // Child Process operates the Timer that prints the state
         // every 1 second and the info
-        Observer *observer = new Observer(this); 
+        Output *output= new Output(this); 
     } else if (pid  > 0) {
         // Parent Process Just Continues
     } else {
