@@ -10,12 +10,12 @@
 #include "LaunchState.hpp"
 #ifndef SAFESTATE_H
 #define SAFESTATE_H
-#include "State.hpp"
+#include "State.cpp"
 
 class SafeState: public State {
     public:
         SafeState();
-        char name[5] = "Safe";
+        std::string name();
         bool keyPressed(int number);
         State *next();
     private:

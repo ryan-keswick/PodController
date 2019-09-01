@@ -8,10 +8,11 @@
  * 
  */
 #include "PodController.hpp"
-#include "Output.hpp"
    
 PodController::PodController() {
     SafeState *safe = new SafeState();
+    printf("%p\n", safe);
+    printf("%s\n", safe->name().c_str());
     state = safe;  
     createTimer();
     printf("new pod\n");
@@ -23,14 +24,13 @@ void PodController::createTimer() {
     if (pid == 0) {
         // Child Process operates the Timer that prints the state
         // every 1 second and the info
-        Output *output= new Output(this); 
+        Output();
     } else if (pid  > 0) {
         // Parent Process Just Continues
     } else {
         printf("FORK FAILED, most likely ran out of memory\n");
     }
 }
-
 
 void PodController::waitKeyForPress() {
     int number = 0;
@@ -51,4 +51,23 @@ void PodController::handleKeyPress(int number) {
 
 void PodController::printError() {
     printf("Error");
+}
+
+void PodController::Output() {
+    time(&this->startOfProgram);
+    time(&this->timeOfLastStateSwitch);
+
+    int i = 0;
+    while(i<10) { // An infinite Loop to show the time
+        time(&this->currentTime);
+        displayInfo();
+        sleep(1); 
+        i++;
+    }
+}
+
+void PodController::displayInfo() {
+    printf("%s ", state->name().c_str());
+    printf("%.f ", difftime(this->currentTime, this->startOfProgram));
+    printf("%.f\n", difftime(this->currentTime, this->timeOfLastStateSwitch));
 }

@@ -22,3 +22,7 @@ State *SafeState::next() {
     LaunchState *launch  = new LaunchState();
     return launch;  
 }
+
+std::string SafeState::name() {
+    return "Safe";
+}

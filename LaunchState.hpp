@@ -1,11 +1,13 @@
 #ifndef LAUNCHSTATE_H 
 #define LAUNCHSTATE_H
-#include "State.hpp"
+#include "State.cpp"
 
 class LaunchState: public State {
     public:
         LaunchState();
-        char name[8] = "Launch";
+        std::string name();
+        bool keyPressed(int number);
+        State *next();     
     private:
 };
 
