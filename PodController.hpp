@@ -13,6 +13,9 @@
 #include <boost/interprocess/shared_memory_object.hpp>
 #include "time.h"
 
+#define READ_FD     0
+#define WRITE_FD    1
+
 class PodController {
     public:
         PodController();
@@ -28,6 +31,7 @@ class PodController {
         time_t startOfProgram;
         time_t currentTime;
         time_t timeOfLastStateSwitch;
+        int fd[2];
 };
 
 #endif
