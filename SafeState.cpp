@@ -11,10 +11,10 @@
 #include "LaunchState.hpp"
 
 SafeState::SafeState() {
-    printf("In Safe State\n");
+    //printf("In Safe State\n");
 }
 
-bool SafeState::keyPressed(int number) {
+int SafeState::keyPressed(int number) {
     if (number == 1) {return true;}
     else {return false;}
 }

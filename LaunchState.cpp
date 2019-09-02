@@ -7,23 +7,23 @@
  * 
  * 
  */
-#include "SafeState.hpp"
 #include "LaunchState.hpp"
+#include "BrakeState.hpp"
 
-SafeState::SafeState() {
-    printf("In Safe State\n");
+LaunchState::LaunchState() {
+    //printf("Launch\n");
 }
 
-bool SafeState::keyPressed(int number) {
-    if (number == 1) {return true;}
-    else {return false;}
+int LaunchState::keyPressed(int number) {
+    if (number == 2) {printf("Emergency\n"); return 1;}
+    return 2;
 }
 
-State *SafeState::next() {
-    LaunchState *launch  = new LaunchState();
-    return launch;  
+State *LaunchState::next() {
+    BrakeState *brake = new BrakeState();
+    return brake;  
 }
 
-std::string SafeState::name() {
-    return "Safe";
+std::string LaunchState::name() {
+    return "LAUNCH";
 }

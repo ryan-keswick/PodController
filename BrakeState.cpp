@@ -4,11 +4,11 @@
 
 
 BrakeState::BrakeState() {
-    printf("Braking");
+//    printf("Braking");
 }
 
-bool BrakeState::keyPressed(int number) {
-    return false;    
+int BrakeState::keyPressed(int number) {
+    return 0;    
 }
 
 State *BrakeState::next() {

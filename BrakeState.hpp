@@ -6,7 +6,7 @@ class BrakeState: public State {
     public:
         BrakeState();
         std::string name();
-        bool keyPressed(int number);
+        int keyPressed(int number);
         State *next();
     private:
 };
