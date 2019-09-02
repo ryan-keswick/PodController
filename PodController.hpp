@@ -10,7 +10,6 @@
 #include <sys/mman.h>
 #include <fcntl.h>
 #include <sys/stat.h>
-#include <boost/interprocess/shared_memory_object.hpp>
 #include "time.h"
 
 #define READ_FD     0
