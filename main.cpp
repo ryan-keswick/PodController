@@ -114,7 +114,6 @@ void StartOutput() {
        
         checkIfLaunchShouldStop();
         std::cout << state->displayInfo(currentTime, startOfProgram, timeOfLastStateSwitch, num);
-        //std::cout << displayInfo();
         sleep(1); 
        // DEBUGING i++;
     }

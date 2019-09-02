@@ -17,6 +17,7 @@ class SafeState: public State {
         std::string name();
         int keyPressed(int number, int timeInState);
         State *next();
+        std::string displayInfo(time_t currentTime, time_t startOfProgram, time_t timeOfLastStateSwitch, int num);
     private:
 
 };

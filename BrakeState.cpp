@@ -32,3 +32,11 @@ State *BrakeState::next() {
 std::string BrakeState::name() {
     return "BRAKE";
 }
+
+std::string BrakeState::displayInfo(time_t currentTime, time_t startOfProgram, time_t timeOfLastStateSwitch, int num) {
+    // Creates the right strings to be manipulated
+    std::string currState (name().c_str());
+    std::string timeSinceStart (std::to_string(difftime(currentTime, startOfProgram)));
+    std::string timeInCurrState(std::to_string(difftime(currentTime, timeOfLastStateSwitch)));
+    return currState + " " + timeSinceStart + " " + timeInCurrState + "\n";
+}
