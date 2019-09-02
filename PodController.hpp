@@ -11,6 +11,7 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include "time.h"
+#include <thread>
 
 #define READ_FD     0
 #define WRITE_FD    1
@@ -20,16 +21,16 @@ class PodController {
         PodController();
         State *state;
         void waitKeyForPress();
-    private:
-        void Output();
-        void createTimer();
-        void handleKeyPress(int number);
-        std::string displayInfo();      
-        void writePipe();
-        void printError();
         time_t startOfProgram;
         time_t currentTime;
-        time_t timeOfLastStateSwitch;
+        time_t timeOfLastStateSwitch;   
+    private:
+        //void Output();
+        void createTimer();
+        void handleKeyPress(int number);
+       // std::string displayInfo();      
+        void writePipe();
+        void printError();
         int fd[2];
 };
 

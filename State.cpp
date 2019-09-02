@@ -17,6 +17,7 @@
 #ifndef STATE_H 
 #define STATE_H 
 #include <string>
+
 class State {
     public:
         virtual std::string name() = 0;

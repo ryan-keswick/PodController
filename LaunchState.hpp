@@ -2,6 +2,7 @@
 #define LAUNCHSTATE_H
 #include "State.cpp"
 
+
 class LaunchState: public State {
     public:
         LaunchState();

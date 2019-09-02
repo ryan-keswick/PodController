@@ -7,7 +7,6 @@
  * 
  * 
  */
-#include "LaunchState.hpp"
 #ifndef SAFESTATE_H
 #define SAFESTATE_H
 #include "State.cpp"

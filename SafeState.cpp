@@ -8,6 +8,7 @@
  * 
  */
 #include "SafeState.hpp"
+#include "LaunchState.hpp"
 
 SafeState::SafeState() {
     printf("In Safe State\n");

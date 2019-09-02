@@ -4,7 +4,10 @@
 
 class BrakeState: public State {
     public:
-        char name[6] = "Brake";
+        BrakeState();
+        std::string name();
+        bool keyPressed(int number);
+        State *next();
     private:
 };
 
