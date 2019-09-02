@@ -1,2 +1,4 @@
 Could of put the time in the current state into the each state class.
 This would of made it possible for the state to decide when to change
+
+Stricter adherance to OOP principles woudld make the code much better

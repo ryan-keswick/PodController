@@ -1,6 +1,15 @@
+/**
+ * @file BrakeState.cpp
+ * @author your name https://github.com/ryan-keswick 
+ * @brief The brakeState with its properties
+ * @version 0.1
+ * @date 2019-09-02
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #include "BrakeState.hpp"
 #include "SafeState.hpp"
-
 
 
 BrakeState::BrakeState() {
@@ -23,5 +32,3 @@ State *BrakeState::next() {
 std::string BrakeState::name() {
     return "BRAKE";
 }
-
-

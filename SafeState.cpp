@@ -1,7 +1,7 @@
 /**
  * @file SafeState.hpp
  * @author your name https://github.com/ryan-keswick 
- * @brief 
+ * @brief The safeState file with the states properties'
  * @version 0.1
  * @date 2019-09-01
  * 
