@@ -7,7 +7,11 @@ BrakeState::BrakeState() {
 //    printf("Braking");
 }
 
-int BrakeState::keyPressed(int number) {
+int BrakeState::keyPressed(int number, int timeInState) {
+    if (number == 99 && timeInState > 4) {
+        printf("Brooklyn\n");
+        return 1;
+    }
     return 0;    
 }
 

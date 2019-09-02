@@ -21,7 +21,7 @@
 class State {
     public:
         virtual std::string name() = 0;
-        virtual int keyPressed(int number) = 0;
+        virtual int keyPressed(int number, int timeInState) = 0;
         virtual State *next() = 0;
     private:
 };

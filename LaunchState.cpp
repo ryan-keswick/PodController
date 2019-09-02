@@ -14,7 +14,7 @@ LaunchState::LaunchState() {
     //printf("Launch\n");
 }
 
-int LaunchState::keyPressed(int number) {
+int LaunchState::keyPressed(int number, int timeInState) {
     if (number == 2) {printf("Emergency\n"); return 1;}
     return 2;
 }

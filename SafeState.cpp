@@ -14,7 +14,7 @@ SafeState::SafeState() {
     //printf("In Safe State\n");
 }
 
-int SafeState::keyPressed(int number) {
+int SafeState::keyPressed(int number, int timeInState) {
     if (number == 1) {return true;}
     else {return false;}
 }

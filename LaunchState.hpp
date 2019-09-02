@@ -7,7 +7,7 @@ class LaunchState: public State {
     public:
         LaunchState();
         std::string name();
-        int keyPressed(int number);
+        int keyPressed(int number, int timeInState);
         State *next();     
     private:
 };

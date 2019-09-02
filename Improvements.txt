@@ -1,0 +1,2 @@
+Could of put the time in the current state into the each state class.
+This would of made it possible for the state to decide when to change
